@@ -79,4 +79,51 @@ sort -n -u number0-9.txt : sorts only the unique numbers
 ls -l /etc | head -n 20 | sort -k 5nr : sorts the 5th column in reverse order
 ls -lh /etc | head -n 20 | sort -k 5hr : "h" option reads human readable data
 ls -lh /etc | head -n 20 | sort -k 6M : "M" option is for the month
+sort -r : sorts things in reverse
+```
+
+#### Searching File Content
+```
+grep -c e file1.txt : Will search how many lines "e" appears
+grep -i gadsby gadsby_manuscript.txt : Will search for gadsby lower or upper case
+grep -v e gadsby_manuscript.txt : Will search all the lines that don't have letter "e"
+ls -lF / | grep root
+```
+
+#### Compressing and Archiving
+```
+tar -cvf ourarchive.tar file[1-3].txt : to create a .tar archive
+-c : to create files
+-v : verbose
+-f : to create files
+-t : test label to check inside
+-x : to extract files
+-j : compress to a bzip2 file
+-z : compress to a gzip file
+tar -tf ourarchive.tar : to check what is inside a .tar file
+tar -xvf ourarchive.tar : to extract the files in the .tar archive
+gzip ourarchive.tar : to compress files using gzip (.gz)
+gunzip ourarchive.tar.gz : to uncompress the gzip (.gz)
+bzip2 ourarchive.tar : to compress files using bzip2 (.bz2)
+bunzip2 ourarchive.tar.bz2 : to uncompress the bzip2 (.bz2)
+bzip2 is better for larger files like video
+zip ourthing.zip : to create a zip file
+tar -cvzf ourarchive.tar file[1-3].txt : compress to a gzip file
+tar -xvzf ourarchive.tar file[1-3].txt : extract from a gzip file. Just change the -c to -x
+```
+
+#### Assignment Solution
+
+##### Task 1
+```
+mkdir super_secret_stuff
+cd super_secret_stuff
+touch top_secret.txt
+sudo update.db
+locate top_secret.txt > secret_place.txt
+```
+
+##### Task 2
+```
+sudo find / -maxdepth 4 -type f -size +1M -exec ls -lh {} \; | sort -k 5hr > filesizes.txt
 ```
