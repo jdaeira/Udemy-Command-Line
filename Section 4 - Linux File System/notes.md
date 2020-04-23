@@ -99,6 +99,7 @@ tar -cvf ourarchive.tar file[1-3].txt : to create a .tar archive
 -t : test label to check inside
 -x : to extract files
 -j : compress to a bzip2 file
+-J : is for XZ file
 -z : compress to a gzip file
 tar -tf ourarchive.tar : to check what is inside a .tar file
 tar -xvf ourarchive.tar : to extract the files in the .tar archive
