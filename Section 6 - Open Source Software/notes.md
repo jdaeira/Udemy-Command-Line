@@ -15,3 +15,16 @@ https://help.ubuntu.com/community/Repositories/Ubuntu : Repositories
 https://packages.ubuntu.com/ : Packages
 lsb_release - a : will tell you your distributions codename
 ```
+
+#### Download Source Code
+````
+Undo the # in the /etc/apt/sources.list file
+sudo apt install dpkg-dev
+sudo apt source <package name>
+````
+
+#### Uninstalling Software
+````
+sudo apt purge <package name> : to remove the package and configuration files
+sudo apt autoremove : remove any dependencies
+````
